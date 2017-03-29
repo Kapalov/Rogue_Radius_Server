@@ -9,8 +9,8 @@ apt-get install mana-toolkit hostapd
 start.sh
 # Generate certificate and key
 sudo openssl genrsa -out "/etc/[webserver]/ssl/private.key" 2048
-sudo openssl req -new -key "/etc/[webserver]/ssl/private.key" -out "/etc/[webserver]/ssl/epam.csr"
-sudo openssl x509 -req -days 365 -in "/etc/[webserver]/ssl/epam.csr" -signkey "/etc/[webserver]/ssl/private.key" -out "/etc/[webserver]/ssl/epam.crt"
+sudo openssl req -new -key "/etc/[webserver]/ssl/private.key" -out "/etc/[webserver]/ssl/cert.csr"
+sudo openssl x509 -req -days 365 -in "/etc/[webserver]/ssl/cert.csr" -signkey "/etc/[webserver]/ssl/private.key" -out "/etc/[webserver]/ssl/cert.crt"
 
 # after that edit eap.conf in /usr/local/etc/raddb:
 
